@@ -10,7 +10,7 @@ module Auth
     attribute :password, String
 
     # Validations
-    validates :email, presence: true
-    validates :password, presence: true
+    validates :email, presence: { message: 'must_be_present' }
+    validates :password, presence: { message: 'must_be_present' }
   end
 end
