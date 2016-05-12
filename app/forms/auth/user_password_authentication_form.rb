@@ -4,7 +4,7 @@ module Auth
   #
   # @author [buntekuh]
   #
-  class UserSignInForm < BaseForm
+  class UserPasswordAuthenticationForm < BaseForm
     # Attributes
     attribute :email, String
     attribute :password, String
