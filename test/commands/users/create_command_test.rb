@@ -22,7 +22,7 @@ module Users
 
     test 'validate_form' do
       assert_raises(CreateCommand::InvalidForm) do
-        CreateCommand.execute TestCreateForm.new
+        CreateCommand.execute TestCreateForm.new(@form.attributes)
       end
 
       [:first_name, :last_name, :email, :password].each do |attr|
