@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module User
+module Users
   class CreateFormTest < ActiveSupport::TestCase
     setup do
-      @form = User::CreateForm.new first_name: 'Bernd', last_name: 'Eickhoff', email: 'foo@bar.de', password: 'chooChoo'
+      @form = CreateForm.new first_name: 'Bernd', last_name: 'Eickhoff', email: 'foo@bar.de', password: 'chooChoo'
     end
 
     test 'responds to attributes' do

@@ -26,4 +26,9 @@ class EncryptionServiceTest < ActiveSupport::TestCase
     assert (token =~ /^[a-f0-9]+$/)
   end
 
+  test 'generate_session_token' do
+    token = EncryptionService.generate_session_token
+    assert_equal 64, token.length
+    assert (token =~ /^[a-f0-9]+$/)
+  end
 end

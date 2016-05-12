@@ -41,4 +41,8 @@ class EncryptionService
   def self.generate_token length = 10
     SecureRandom.hex(length)
   end
+
+  def self.generate_session_token
+    generate_token 32
+  end
 end

@@ -1,4 +1,4 @@
-module User
+module Users
   #
   # Form used to create users
   #
