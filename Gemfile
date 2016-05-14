@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # poro objects that act as if they were active_record objects
 gem 'virtus'
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
