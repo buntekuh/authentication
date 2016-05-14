@@ -1,0 +1,6 @@
+- present @form do |form|
+  = form.form do |form_builder|
+    = form_builder.text_field :email
+    = form_builder.password_field  :password
+    .actions
+      = form_builder.submit 'Submit'

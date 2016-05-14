@@ -12,5 +12,13 @@ module Auth
     # Validations
     validates :email, presence: { message: 'must_be_present' }
     validates :password, presence: { message: 'must_be_present' }
+
+    # 
+    # Called from FormHelper form_for method
+    # 
+    # @return false
+    def persisted?
+      false
+    end
   end
 end
