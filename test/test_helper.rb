@@ -27,4 +27,16 @@ class ActionController::TestCase
       Rails.application.routes_reloader.reload!
     end
   end
+
+  # 
+  # Assert that tests an Exception as well as a message
+  # @param exception [Exception] The Exception to test
+  # @param message [String] The message to test
+  # @param &block [type] The block that should raise the exception and message
+  # 
+  def assert_raises_with_message(exception, message, &block)
+    block.call
+  rescue exception => e
+    assert_match message, e.message
+  end
 end
