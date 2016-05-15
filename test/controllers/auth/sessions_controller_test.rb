@@ -20,7 +20,7 @@ module Auth
       assert_includes response.body, '<input type="text" name="session[email]"'
     end
 
-    test 'create signs in and redirects to inside controller' do
+    test 'create signs in and redirects to private controller' do
       post :create, session: { email: @email, password: @password }
       assert @controller.send('signed_in?')
       assert_equal @controller.send('current_user'), User.find_by_email(@email)
