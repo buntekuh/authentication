@@ -1,5 +1,4 @@
-h1 
-  | Welcome
-  = current_user.first_name
-  |, 
-  = current_user.last_name
+- present current_user do |user|
+  h1 
+    ' Welcome
+    = user.full_name
