@@ -3,8 +3,7 @@ module Auth
 
     def form
       v.form_for(context, url: v.sessions_path(context), as: 'session') do |f|
-        presenter = BasePresenter.factory f, v
-        yield presenter
+        yield BasePresenter.factory(f, v)
       end
     end
   end
