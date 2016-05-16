@@ -1,8 +1,8 @@
-# README
+## README
 
-## This application is not about authentication, although authenticate is all it does.
+### This application is not about authentication, although authenticate is all it does.
 
-## This application demonstrates how I organize my code to keep it modular, clean and reusable.
+### It demonstrates how I organize my code to keep it modular, clean and reusable.
 
 ### Commands
 
