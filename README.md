@@ -9,7 +9,7 @@
 I believe in thin controllers. A controller should only have to deal with routes, the session, params, etc.
 
 All business logic is encapsulated within commands.  
-All commands have an execute method that is very easy to read and understand.  
+All commands have an execute method that is easy to read and understand.  
 If a command fails it raises an exception.  
 Commands are extremely useful for defining APIs  
 
@@ -17,7 +17,7 @@ Please refer to
 
 * _app/commands/base_command.rb_ for the command base class
 
-* _app/commands/_ for implementation thereof
+* _app/commands/_ for implementations thereof
 
 ### Private and protected attribute accessors
 
@@ -26,14 +26,6 @@ As commands should be secure and self contained, attributes should not be access
 Therefore I have written a simple ScopedAttrAccessor class that defines methods for both private and protected attributes.
 
 Please refer to _config/initializers/scoped_attr_accessors.rb_
-
-Please refer to
-
-* _app/controllers/auth/concerns/session_methods.rb_ for controller methods like sign_in_user and current_user
-
-* _app/controllers/auth/sessions_controller.rb_ The authentification controller
-
-* _app/commands/auth/user_password_authentication_command.rb_ For the command that finds and 
 
 ### Presenters
 
@@ -47,15 +39,15 @@ please refer to
 
 ### Models
 
-I believe in thin models. A model is concerned with representing database records in ruby.  
-Forms are used to encapsulate data used within the application.  
-Forms are concerned with data and validatitions.  
-Commands are concerned with persisting form data.  
-There are no more callbacks, instead there are methods within commands.  
+I believe in thin models. A model should be concerned with representing database records,  
+while forms are concerned with data encapsulation and validatition within the application.  
+Commands convert forms to models and persist them.  
+There are no more model callbacks, instead these are methods within commands.  
 
 ### Services
 
 Services are used for reusable code
+
 please refer to _app/services/_
 
 ### Tests
@@ -65,8 +57,19 @@ All the code in this application is tested and passing. I like using Minitest as
 
 ### Authentication
 
-Bugged authentication can be a huge security loophole, therefore I like to keep authentication as simple as possible, 
-instead of relying on huge external authentication gems like devise.
+Bugged authentication can be a huge security loophole, therefore I like to keep authentication as simple as possible.
+
+Please refer to
+
+* _app/controllers/auth/concerns/session_methods.rb_ for controller methods necessary for authentication
+
+* _app/controllers/auth/sessions_controller.rb_ the authentification controller
+
+* _app/commands/auth/user_password_authentication_command.rb_ the command that finds the user and authenticates the password.
+
+### Yard
+
+I like to use Yard style comments to document the code.
 
 ### Application
 
